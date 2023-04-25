@@ -1,0 +1,23 @@
+create database artesanias;
+use artesanias;
+
+CREATE TABLE `products` (
+  `codigoean` bigint(20) NOT NULL,
+  `nombre` varchar(40) NOT NULL,
+  `descripcion` varchar(80) NOT NULL,
+  `marca` varchar(40) NOT NULL,
+  `unidades` int(11) NOT NULL,
+  `file_data` longblob DEFAULT NULL,
+  PRIMARY KEY (`codigoean`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+CREATE TABLE `comments` (
+  `id_comentario` bigint(20) NOT NULL AUTO_INCREMENT,
+  `codigoean` bigint(20) DEFAULT NULL,
+  `comentario` varchar(255) DEFAULT NULL,
+  `fecha_creacion` date DEFAULT NULL,
+  PRIMARY KEY (`id_comentario`),
+  KEY `codigoean` (`codigoean`),
+  CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`codigoean`) REFERENCES `products` (`codigoEan`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
