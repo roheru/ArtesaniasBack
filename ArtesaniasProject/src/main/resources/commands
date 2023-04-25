@@ -1,0 +1,13 @@
+npm uninstall -g @angular/cli
+npm install -g @angular/cli
+ng version | ng v
+ng new nombre Y, css
+import project 
+--start ng serve to ng server -o
+npm scripts  - start
+--configurar en netbeans 
+modificar app.component.html
+
+ng g s services/products
+
+ng g c components/formProduct --skip-tests
